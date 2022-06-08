@@ -1,13 +1,85 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
+@font-face {
+  font-family: 'SpecifyPERSONAL';
+  src: url('./fonts/Specify-ExpandedMedium.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'SpecifyPERSONAL';
+  src: url('./fonts/Specify-ExpandedBold.ttf');
+  font-style: bold;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'SpecifyPERSONAL';
+  src: url('./fonts/Specify-ExpandedLight.ttf');
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'SpecifyPERSONAL';
+  src: url('./fonts/Specify-ExpandedBlack.ttf');
+  font-style: normal;
+  font-weight: 900;
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* COLORS */
+  --almond: #ff8383;
+  --almond: #ff5555;
+  --blush: #a1a7d7;
+  --sark: #507b75;
+  --sea: #563cff;
+  --sea: #4545d3;
+  --sinbad: #a1a4d0;
+  --black: #292929;
+  --black2: #151515;
+  --white: #ffffff;
+  --white2: #eeeeee;
+  --orange: #f2c18c;
+  --orange: #fec279;
+  --light-orange: rgb(255, 224, 156);
+  --green: #53b477;
+  /* VARS */
+  --hover-transition: all 0.1s ease-in;
+
+  margin: 0;
+  padding: 0;
+  font-family: 'SpecifyPERSONAL', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: var(--white);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p,
+a,
+button {
+  font-family: 'Poppins';
+}
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  will-change: transform;
 }
