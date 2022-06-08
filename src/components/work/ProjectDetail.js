@@ -10,31 +10,16 @@ export default function ProjectDetail({ toggleProjectView }) {
       animate={{ x: 0 }}
       exit={{ x: '-100%' }}
       transition={{ duration: 0.5 }}
-      style={{
-        top: window.scrollY,
-      }}
     >
-      <Inner>
-        <BackButton toggleProjectView={toggleProjectView} />
-        <ProjectContent />
-      </Inner>
+      <BackButton toggleProjectView={toggleProjectView} />
+      <ProjectContent />
     </Container>
   );
 }
 
-const Inner = styled(motion.section)`
-  position: relative;
-  overflow-y: scroll;
-  height: 100vh;
-  width: 100vw;
-`;
 const Container = styled(motion.section)`
-  position: fixed;
-  height: 100vh;
-  left: 0;
   background: var(--white);
   color: var(--black);
-  overflow: scroll;
 `;
 
-const Content = styled.div``;
+const Inner = styled(motion.section)``;

@@ -4,41 +4,50 @@ import { useEffect, useState } from 'react';
 
 export default function Nav() {
   const [active, setActive] = useState('');
+  const [display, setDisplay] = useState(false);
   const location = useLocation();
   useEffect(() => {
+    console.log(location.pathname.includes('/work/'));
+    if (location.pathname.includes('/work/')) {
+      setDisplay(false);
+    } else {
+      setDisplay(true);
+    }
     setActive(location.pathname);
   }, [location]);
   return (
-    <StyledNav>
-      <Socials>
-        <span>
-          <i className="icon-linkedin" />
-        </span>
-        <span style={{ marginBottom: '-0.25rem' }}>
-          <i className="icon-instagram" />
-        </span>
-      </Socials>
-      <div>
-        <Link className={active === '/' ? 'active' : ''} to="/">
-          home
-        </Link>
-        <Link className={active === '/about' ? 'active' : ''} to="/about">
-          about
-        </Link>
-        <Link className={active === '/work' ? 'active' : ''} to="/work">
-          work
-        </Link>
-        <Link className={active === '/contact' ? 'active' : ''} to="/contact">
-          contact
-        </Link>
-      </div>
-    </StyledNav>
+    <div>
+      <StyledNav display={display}>
+        <Socials>
+          <span>
+            <i className="icon-linkedin" />
+          </span>
+          <span style={{ marginBottom: '-0.25rem' }}>
+            <i className="icon-instagram" />
+          </span>
+        </Socials>
+        <div>
+          <Link className={active === '/' ? 'active' : ''} to="/">
+            home
+          </Link>
+          <Link className={active === '/about' ? 'active' : ''} to="/about">
+            about
+          </Link>
+          <Link className={active === '/work' ? 'active' : ''} to="/work">
+            work
+          </Link>
+          <Link className={active === '/contact' ? 'active' : ''} to="/contact">
+            contact
+          </Link>
+        </div>
+      </StyledNav>
+    </div>
   );
 }
 
 const StyledNav = styled.nav`
+  display: ${(props) => (props.display === true ? 'flex' : 'none')};
   height: 5rem;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   position: absolute;

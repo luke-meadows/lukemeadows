@@ -6,12 +6,6 @@ export default function ProjectContent({ project }) {
     <>
       <Container>
         <div className="top">
-          <div className="left">
-            <h3>Deliverables</h3>
-            <p>UI Design</p>
-            <p>Development</p>
-            <p>CMS</p>
-          </div>
           <div className="right">
             <h1>Connected Home Systems</h1>
             <p>
@@ -23,6 +17,18 @@ export default function ProjectContent({ project }) {
               nulla minus debitis est quisquam aliquid id iste. Lexpedita
               reiciendis rerum nulla minus debitis est quisquam aliquid id iste.
             </p>
+          </div>
+          <div className="left">
+            <div>
+              <h3>Deliverables</h3>
+              <p>UI Design</p>
+              <p>Development</p>
+              <p>CMS</p>
+            </div>
+            <div className="icon-container">
+              <i className="icon-code" />
+              <i className="icon-window" />
+            </div>
           </div>
         </div>
       </Container>
@@ -44,24 +50,34 @@ const Container = styled.section`
   h3 {
     font-weight: 600;
     font-family: 'Poppins';
-    font-size: 1rem;
+    font-size: 01rem;
     line-height: 2;
+    color: var(--almond);
   }
 
   .top {
-    display: flex;
-    justify-content: space-between;
     .left {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
       p {
         font-size: 0.85rem;
         font-weight: 400;
         max-width: 20ch;
       }
+      .icon-container {
+        margin-left: 4rem;
+        i {
+          color: var(--almond);
+          font-size: 2rem;
+          margin-right: 1rem;
+          cursor: pointer;
+        }
+      }
     }
     .right {
       h1 {
         font-size: 2.5rem;
-        line-height: 1.2;
         margin-bottom: 1rem;
       }
       p {
@@ -79,9 +95,9 @@ const Logo = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem;
+  padding: 3rem;
   img {
-    height: 10rem;
+    height: 5rem;
   }
 `;
 
@@ -94,4 +110,5 @@ const Preview = styled.section`
     width: 1000px;
     border-radius: 10px;
   }
+  padding-bottom: 3rem;
 `;

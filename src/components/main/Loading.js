@@ -2,7 +2,7 @@ import styled from 'styled-components';
 export default function Loading() {
   return (
     <StyledLoading>
-      <div class="lds-ellipsis">
+      <div className="lds-ellipsis">
         <div></div>
         <div></div>
         <div></div>
@@ -17,7 +17,7 @@ const StyledLoading = styled.div`
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: -1;
   color: var(--black);
   p {
     font-size: 1.5rem;

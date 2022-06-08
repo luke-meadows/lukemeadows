@@ -1,19 +1,20 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 export default function BackButton({ toggleProjectView }) {
   return (
-    <StyledButton onClick={toggleProjectView}>
+    <StyledButton to="/work" onClick={toggleProjectView}>
       <i className="icon-left-open-big" />
       Back to projects
     </StyledButton>
   );
 }
 
-const StyledButton = styled.div`
+const StyledButton = styled(Link)`
   font-size: 0.8rem;
   font-weight: 500;
   display: flex;
   align-items: center;
-  color: var(--black);
+  color: var(--almond);
   font-family: 'Poppins';
   padding: 2rem 0;
   cursor: pointer;
