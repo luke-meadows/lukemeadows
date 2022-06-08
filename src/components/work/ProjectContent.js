@@ -9,13 +9,16 @@ export default function ProjectContent({ project }) {
           <div className="right">
             <h1>Connected Home Systems</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
-              consequatur magnam ducimus necessitatibus quidem quod consequuntur
-              sint suscipit vero. Beatae aperiam magni omnis quibusdam
-              reiciendis eaque deserunt suscipit, minima sit, repellendus nam
-              culpa fugit sed! Tenetur sunt voluptatem expedita reiciendis rerum
-              nulla minus debitis est quisquam aliquid id iste. Lexpedita
-              reiciendis rerum nulla minus debitis est quisquam aliquid id iste.
+              This project was completed for a client in the smart home
+              business. Connected Home Systems wanted to inject some energy back
+              into their website with a completely overhauled design which
+              appealed to their high end clientele.
+            </p>
+            <p>
+              Included in the build is a content management system. The
+              administrator is able to create, edit and delete the content on
+              the website. Blog posts, images and past projects can all be
+              managed through the password protected portal.
             </p>
           </div>
           <div className="left">
@@ -32,10 +35,10 @@ export default function ProjectContent({ project }) {
           </div>
         </div>
       </Container>
-      <Logo>
-        <img src={CHSLOGO} alt="logo" />
-      </Logo>
       <Preview>
+        <Logo>
+          <img src={CHSLOGO} alt="logo" />
+        </Logo>
         <img src={CHSPREVIEW} alt="" className="preview" />
       </Preview>
     </>
@@ -67,11 +70,21 @@ const Container = styled.section`
       }
       .icon-container {
         margin-left: 4rem;
+        display: flex;
         i {
           color: var(--almond);
           font-size: 2rem;
           margin-right: 1rem;
           cursor: pointer;
+          transition: var(--hover-transition);
+          border-radius: 100px;
+          box-sizing: border-box;
+          display: block;
+          border: 3px solid transparent;
+          padding: 0.3rem;
+          &:hover {
+            border: 3px solid var(--almond);
+          }
         }
       }
     }
@@ -84,26 +97,26 @@ const Container = styled.section`
         font-size: 1rem;
         font-weight: 400;
         max-width: 80ch;
-        line-height: 1.5;
+        line-height: 1.8;
+        margin-bottom: 1rem;
       }
     }
   }
 `;
 
 const Logo = styled.section`
-  background: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 3rem;
   img {
-    height: 5rem;
+    height: 6rem;
   }
 `;
 
 const Preview = styled.section`
   background: var(--black);
-  img {
+  .preview {
     display: block;
     margin: 0 auto;
     max-width: 1000px;

@@ -21,10 +21,9 @@ export default function TopBlurb() {
             deleniti laborum est nesciunt numquam!
           </p>
           <p>
-            If you'd like to discuss a project you have in mind I would love to
-            hear from you -{' '}
+            If you'd like to discuss a project you have in mind please{' '}
             <span style={{ fontWeight: 500, color: 'var(--almond)' }}>
-              Contact me here.
+              contact me here.
             </span>
           </p>
           <p>
@@ -32,7 +31,7 @@ export default function TopBlurb() {
             aliquid incidunt eaque soluta asperiores aperiam mollitia ipsa
             deleniti{' - '}
             <span style={{ fontWeight: 500, color: 'var(--almond)' }}>
-              View my recent projects.
+              view my recent projects.
             </span>
           </p>
         </MainText>
@@ -81,12 +80,15 @@ const Location = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  h3,
+
+  h3 {
+    font-size: 1.2rem;
+  }
   i {
     font-size: 1.5rem;
   }
   i {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     margin-left: -0.6rem;
     color: var(--almond);
   }
