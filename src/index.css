@@ -58,6 +58,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   background: var(--white);
+  background: var(--almond);
 }
 
 code {

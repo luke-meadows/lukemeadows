@@ -1,6 +1,13 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 export default function Nav() {
+  const [active, setActive] = useState('');
+  const location = useLocation();
+  useEffect(() => {
+    setActive(location.pathname);
+  }, [location]);
   return (
     <StyledNav>
       <Socials>
@@ -12,12 +19,18 @@ export default function Nav() {
         </span>
       </Socials>
       <div>
-        <Link className="active" to="/">
+        <Link className={active === '/' ? 'active' : ''} to="/">
           home
         </Link>
-        <Link to="/about">about</Link>
-        <Link to="/work">work</Link>
-        <Link to="/contact">contact</Link>
+        <Link className={active === '/about' ? 'active' : ''} to="/about">
+          about
+        </Link>
+        <Link className={active === '/work' ? 'active' : ''} to="/work">
+          work
+        </Link>
+        <Link className={active === '/contact' ? 'active' : ''} to="/contact">
+          contact
+        </Link>
       </div>
     </StyledNav>
   );
@@ -40,6 +53,7 @@ const StyledNav = styled.nav`
     font-size: 0.8rem;
     position: relative;
     transition: var(--hover-transition);
+    transition-delay: 1000;
     &:hover {
       color: var(--white);
     }
@@ -47,17 +61,17 @@ const StyledNav = styled.nav`
   .active {
     color: var(--white);
   }
-  .active::after {
+  /* .active::after {
     content: '';
     position: absolute;
     height: 2px;
-    width: 25px;
+    width: 2px;
     border-radius: 2px;
     background-color: var(--white2);
     left: 50%;
     bottom: -4px;
-    transform: translateX(-50%);
-  }
+    transform: translateX(-50%); 
+  }*/
   i {
     font-size: 1.5rem;
     color: var(--black);

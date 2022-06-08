@@ -16,10 +16,11 @@ export default function Skills() {
           <p>Storybook</p>
         </Column>
         <Column>
-          <p className="header">Database</p>
+          <p className="header">Backend</p>
           <p>GraphQL</p>
           <p>Firebase</p>
           <p>MongoDB</p>
+          <p>Keystone.js</p>
         </Column>
         <Column>
           <p className="header">Design</p>
@@ -40,7 +41,7 @@ const Container = styled.div`
   background: var(--almond);
 
   h3 {
-    color: var(--white);
+    color: var(--black);
     font-size: 3rem;
     margin-bottom: 2rem;
     letter-spacing: 1px;
