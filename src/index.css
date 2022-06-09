@@ -31,7 +31,9 @@
 
 body {
   /* COLORS */
-  --almond: #ff5555;
+  --almond: #ed5050;
+  --almond-transparent: #ed505097;
+
   --black: #292929;
   --black2: #151515;
   --white: #ffffff;

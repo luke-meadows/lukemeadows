@@ -1,47 +1,49 @@
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 import styled from 'styled-components';
-import CHSLOGO from '../../imgs/project-logos/logoNoText.png';
-import CHSPREVIEW from '../../imgs/project-previews/CHS fullscreen.png';
-export default function ProjectContent({ project }) {
+import { projectsData } from '../../lib/projectsData';
+export default function ProjectContent({}) {
+  const location = useLocation();
+  const [project, setProject] = useState();
+  useEffect(() => {
+    const path = location.pathname.split('/')[2];
+    setProject(projectsData[path]);
+  }, []);
   return (
-    <>
-      <Container>
-        <div className="top">
-          <div className="right">
-            <h1>Connected Home Systems</h1>
-            <p>
-              This project was completed for a client in the smart home
-              business. Connected Home Systems wanted to inject some energy back
-              into their website with a completely overhauled design which
-              appealed to their high end clientele.
-            </p>
-            <p>
-              Included in the build is a content management system. The
-              administrator is able to create, edit and delete the content on
-              the website. Blog posts, images and past projects can all be
-              managed through the password protected portal.
-            </p>
-          </div>
-          <div className="left">
-            <div>
-              <h3>Deliverables</h3>
-              <p>UI Design</p>
-              <p>Development</p>
-              <p>CMS</p>
+    <div>
+      {project && (
+        <>
+          <Container>
+            <div className="top">
+              <div className="right">
+                <h1>{project.title}</h1>
+                {project?.text.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+              <div className="left">
+                <div>
+                  <h3>Deliverables</h3>
+                  {project?.deliverables.map((d, i) => (
+                    <p key={i}>{d}</p>
+                  ))}
+                </div>
+                <div className="icon-container">
+                  <i className="icon-code" />
+                  <i className="icon-window" />
+                </div>
+              </div>
             </div>
-            <div className="icon-container">
-              <i className="icon-code" />
-              <i className="icon-window" />
-            </div>
-          </div>
-        </div>
-      </Container>
-      <Preview>
-        <Logo>
-          <img src={CHSLOGO} alt="logo" />
-        </Logo>
-        <img src={CHSPREVIEW} alt="" className="preview" />
-      </Preview>
-    </>
+          </Container>
+          <Preview>
+            <Logo>
+              <img src={project.logo} alt="logo" />
+            </Logo>
+            <img src={project.preview} alt="" className="preview" />
+          </Preview>
+        </>
+      )}
+    </div>
   );
 }
 
@@ -73,17 +75,17 @@ const Container = styled.section`
         display: flex;
         i {
           color: var(--almond);
-          font-size: 2rem;
           margin-right: 1rem;
           cursor: pointer;
           transition: var(--hover-transition);
           border-radius: 100px;
           box-sizing: border-box;
-          display: block;
+          display: inline-block;
           border: 3px solid transparent;
           padding: 0.3rem;
+          font-size: 2rem;
           &:hover {
-            border: 3px solid var(--almond);
+            transform: scale(1.2);
           }
         }
       }
@@ -108,7 +110,7 @@ const Logo = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 4rem;
   img {
     height: 6rem;
   }

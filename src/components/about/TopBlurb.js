@@ -100,6 +100,6 @@ const Flex = styled.div`
 `;
 const Grid = styled.div`
   display: grid;
-  margin: 12rem 0;
+  margin: 8rem 0;
   grid-template-columns: repeat(2, 1fr);
 `;

@@ -13,7 +13,7 @@ export default function About() {
       <Hero bg="almond" chevron="black">
         <Heading color="black">about.</Heading>
       </Hero>
-      <Container color="white" bg="black" padding="12rem 0rem 0rem 0rem">
+      <Container color="white" bg="black" padding="8rem 0rem 0rem 0rem">
         <TopBlurb />
         <Skills />
       </Container>
