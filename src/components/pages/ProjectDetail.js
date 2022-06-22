@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import SmoothScroll from '../../lib/SmoothScroll.component';
-import BackButton from './BackButton';
-import ProjectContent from './ProjectContent';
+import ProjectContent from '../work/ProjectContent';
+import BackButton from '../work/BackButton';
+
 export default function ProjectDetail({ toggleProjectView }) {
   return (
     <Container
@@ -21,5 +21,3 @@ const Container = styled(motion.section)`
   background: var(--white);
   color: var(--black);
 `;
-
-const Inner = styled(motion.section)``;

@@ -8,8 +8,8 @@ import Work from './components/pages/Work';
 import Contact from './components/pages/Contact';
 import SmoothScroll from './lib/SmoothScroll.component';
 import Loading from './components/main/Loading';
-import ProjectDetail from './components/work/ProjectDetail';
 import { useEffect } from 'react';
+import ProjectDetail from './components/pages/ProjectDetail';
 function App() {
   const location = useLocation();
   useEffect(() => {

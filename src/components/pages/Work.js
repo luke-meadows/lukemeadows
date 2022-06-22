@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Heading from '../Heading';
 import Hero from '../Hero';
+import Footer from '../main/Footer';
 import PageTransitionDiv from '../main/PageTransitionDiv';
 import ListOfProjects from '../work/ListOfProjects';
 export default function Work() {
@@ -12,6 +13,7 @@ export default function Work() {
         <Heading color={color}>work.</Heading>
       </Hero>
       <ListOfProjects bg="white" color={color} />
+      <Footer />
     </PageTransitionDiv>
   );
 }

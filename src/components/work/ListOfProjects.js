@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Container from '../main/Container';
-export default function ListOfProjects({ bg, color }) {
+export default function ListOfProjects() {
   return (
-    <Container color="white" bg="black">
+    <Container color="white" bg="black" padding="6rem">
       <List>
-        <Link to="/work/chs">Connected Home Systems</Link>
         <Link to="/work/abs">Above and Beyond Solutions</Link>
-        <Link to="/work/bounce">Bounce</Link>
-        <Link to="/work/yourpay">Your pay</Link>
+        <Link to="/work/chs">Connected Home Systems</Link>
       </List>
     </Container>
   );
