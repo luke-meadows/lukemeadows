@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import Hero from '../Hero';
 import TopBlurb from '../about/TopBlurb';
 import PageTransitionDiv from '../main/PageTransitionDiv';
+import Footer from '../main/Footer';
 export default function About() {
   return (
     <PageTransitionDiv>
@@ -17,6 +18,7 @@ export default function About() {
         <TopBlurb />
         <Skills />
       </Container>
+      <Footer />
     </PageTransitionDiv>
   );
 }

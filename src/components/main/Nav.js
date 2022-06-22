@@ -4,20 +4,19 @@ import { useEffect, useState } from 'react';
 
 export default function Nav() {
   const [active, setActive] = useState('');
-  const [display, setDisplay] = useState(false);
+  const [shouldDisplay, setShouldDisplay] = useState(false);
   const location = useLocation();
   useEffect(() => {
-    console.log(location.pathname.includes('/work/'));
     if (location.pathname.includes('/work/')) {
-      setDisplay(false);
+      setShouldDisplay(false);
     } else {
-      setDisplay(true);
+      setShouldDisplay(true);
     }
     setActive(location.pathname);
   }, [location]);
   return (
     <div>
-      <StyledNav display={display}>
+      <StyledNav shouldDisplay={shouldDisplay}>
         <Socials>
           <span>
             <i className="icon-linkedin" />
@@ -46,7 +45,7 @@ export default function Nav() {
 }
 
 const StyledNav = styled.nav`
-  display: ${(props) => (props.display === true ? 'flex' : 'none')};
+  display: ${(props) => (props.shouldDisplay === true ? 'flex' : 'none')};
   height: 5rem;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +54,7 @@ const StyledNav = styled.nav`
   left: 0;
   width: 100%;
   padding: 0 6rem;
-  z-index: 2;
+  z-index: 10;
   a {
     font-weight: 500;
     margin: 0 0.8rem;
@@ -70,20 +69,14 @@ const StyledNav = styled.nav`
   .active {
     color: var(--white);
   }
-  /* .active::after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 2px;
-    border-radius: 2px;
-    background-color: var(--white2);
-    left: 50%;
-    bottom: -4px;
-    transform: translateX(-50%); 
-  }*/
   i {
     font-size: 1.5rem;
     color: var(--black);
+    cursor: pointer;
+    transition: var(--hover-transition);
+    &:hover {
+      color: var(--white);
+    }
   }
 `;
 

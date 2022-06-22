@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import Heading from '../Heading';
 import Hero from '../Hero';
+import Footer from '../main/Footer';
 import PageTransitionDiv from '../main/PageTransitionDiv';
 export default function Home() {
   return (
@@ -13,11 +14,14 @@ export default function Home() {
             color: 'var(--black)',
             textAlign: 'right',
             paddingRight: '1rem',
+            position: 'relative',
+            zIndex: '3',
           }}
         >
-          Frontend Web Developer
+          Web Developer
         </p>
       </Hero>
+      <Footer />
     </PageTransitionDiv>
   );
 }
