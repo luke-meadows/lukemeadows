@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Man from '../imgs/hero-images/man.png';
+import Woman from '../imgs/hero-images/woman.png';
 
 const bounceTransition = {
   y: {
@@ -22,6 +24,12 @@ export default function Hero({ children, bg, chevron }) {
           className="icon-down-open-big"
         />
       )}
+      <div className="image left">
+        <img src={Woman} />
+      </div>
+      <div className="image right">
+        <img src={Man} />
+      </div>
     </Container>
   );
 }
@@ -46,5 +54,41 @@ const Container = styled.section`
     transform: translateX(-50%);
     font-size: 1.8rem;
     color: ${(props) => `var(--${props.chevron})`};
+  }
+
+  .image {
+    position: absolute;
+    bottom: 0;
+    height: 90vh;
+    z-index: 2;
+    img {
+      height: 100%;
+    }
+  }
+  .left {
+    left: 0;
+  }
+  .right {
+    right: 0;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .image {
+      width: 50%;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .left {
+      img {
+        object-position: bottom left;
+      }
+    }
+    .right {
+      img {
+        object-position: bottom right;
+      }
+    }
   }
 `;
