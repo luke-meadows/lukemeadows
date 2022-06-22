@@ -16,9 +16,11 @@ export default function Heading({ children, color }) {
 
 const Text = styled(motion.h1)`
   color: ${(props) => `var(--${props.color})`};
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: 500;
   word-spacing: -10px;
   line-height: 1;
   opacity: 0;
+  position: relative;
+  z-index: 3;
 `;
