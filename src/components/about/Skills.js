@@ -39,13 +39,20 @@ export default function Skills() {
 const Container = styled.div`
   padding: 6rem;
   background: var(--almond);
-
   h3 {
     color: var(--black);
     font-size: 3rem;
     margin-bottom: 2rem;
     letter-spacing: 1px;
     font-weight: 500;
+  }
+  // MEDIA QUERY
+  @media only screen and (max-width: 1000px) {
+    padding: 3rem 2rem 4rem 2rem;
+    h3 {
+      margin-top: 0;
+      padding-top: 0;
+    }
   }
 `;
 

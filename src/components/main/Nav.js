@@ -14,18 +14,25 @@ export default function Nav() {
     }
     setActive(location.pathname);
   }, [location]);
+
   return (
     <div>
       <StyledNav shouldDisplay={shouldDisplay}>
         <Socials>
-          <span>
+          <a
+            href="https://www.linkedin.com/in/luke-meadows-8b1735233/"
+            target="blank"
+          >
             <i className="icon-linkedin" />
-          </span>
-          <span style={{ marginBottom: '-0.25rem' }}>
+          </a>
+          <a style={{ marginBottom: '-0.25rem' }}>
             <i className="icon-instagram" />
-          </span>
+          </a>
+          <a href="https://github.com/luke-meadows" target="blank">
+            <i className="icon-git" />
+          </a>
         </Socials>
-        <div>
+        <div className="nav-links">
           <Link className={active === '/' ? 'active' : ''} to="/">
             home
           </Link>
@@ -39,6 +46,9 @@ export default function Nav() {
             contact
           </Link>
         </div>
+        <button className="mobile-menu-button">
+          <i className="icon-menu" />
+        </button>
       </StyledNav>
     </div>
   );
@@ -74,8 +84,30 @@ const StyledNav = styled.nav`
     color: var(--black);
     cursor: pointer;
     transition: var(--hover-transition);
-    &:hover {
+    &:hover,
+    &:focus {
       color: var(--white);
+    }
+  }
+  .mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+  }
+  // MEDIA QUERY
+  @media only screen and (max-width: 1000px) {
+    padding: 3rem 2rem;
+    .nav-links {
+      display: none;
+    }
+    i {
+      font-size: 2.5rem;
+      &:hover {
+        color: var(--black);
+      }
+    }
+    .mobile-menu-button {
+      display: block;
     }
   }
 `;
@@ -83,4 +115,13 @@ const StyledNav = styled.nav`
 const Socials = styled.div`
   display: flex;
   align-items: center;
+  a {
+    margin: 0 0.5rem;
+  }
+  // MEDIA QUERY
+  @media only screen and (max-width: 1000px) {
+    a {
+      margin: 0 0.2rem;
+    }
+  }
 `;

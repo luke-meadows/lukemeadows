@@ -17,4 +17,8 @@ const StyledContainer = styled.section`
   color: ${(props) => `var(--${props.color})`};
   background: ${(props) => `var(--${props.bg})`};
   position: relative;
+  // MEDIA QUERY
+  @media only screen and (max-width: 1000px) {
+    padding: 0;
+  }
 `;

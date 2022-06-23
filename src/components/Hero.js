@@ -73,22 +73,11 @@ const Container = styled.section`
   }
 
   @media only screen and (max-width: 1000px) {
-    .image {
-      width: 50%;
-      img {
-        width: 100%;
-        object-fit: contain;
-      }
-    }
     .left {
-      img {
-        object-position: bottom left;
-      }
+      display: none;
     }
     .right {
-      img {
-        object-position: bottom right;
-      }
+      opacity: 0.6;
     }
   }
 `;
