@@ -8,17 +8,22 @@ import Work from './components/pages/Work';
 import Contact from './components/pages/Contact';
 import SmoothScroll from './lib/SmoothScroll.component';
 import Loading from './components/main/Loading';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ProjectDetail from './components/pages/ProjectDetail';
+import MobileNav from './components/main/MobileNav';
 function App() {
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  const [mobileNavActive, setMobileNavActive] = useState(false);
+
   return (
     <div className="App">
+      {mobileNavActive && <MobileNav />}
       <SmoothScroll>
-        <Nav />
+        <Nav setMobileNavActive={setMobileNavActive} />
         <Loading />
         <AnimatePresence exitBeforeEnter initial={false}>
           <Routes location={useLocation()} key={location.pathname}>

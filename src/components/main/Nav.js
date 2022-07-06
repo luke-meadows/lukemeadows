@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-export default function Nav() {
+export default function Nav({ setMobileNavActive }) {
   const [active, setActive] = useState('');
   const [shouldDisplay, setShouldDisplay] = useState(false);
   const location = useLocation();
@@ -19,7 +19,7 @@ export default function Nav() {
     <div>
       <StyledNav shouldDisplay={shouldDisplay}>
         <Socials>
-          <a
+          {/* <a
             href="https://www.linkedin.com/in/luke-meadows-8b1735233/"
             target="blank"
           >
@@ -27,7 +27,7 @@ export default function Nav() {
           </a>
           <a style={{ marginBottom: '-0.25rem' }}>
             <i className="icon-instagram" />
-          </a>
+          </a> */}
           <a href="https://github.com/luke-meadows" target="blank">
             <i className="icon-git" />
           </a>
@@ -46,7 +46,10 @@ export default function Nav() {
             contact
           </Link>
         </div>
-        <button className="mobile-menu-button">
+        <button
+          className="mobile-menu-button"
+          onClick={() => setMobileNavActive(true)}
+        >
           <i className="icon-menu" />
         </button>
       </StyledNav>
@@ -98,7 +101,10 @@ const StyledNav = styled.nav`
   @media only screen and (max-width: 1000px) {
     padding: 3rem 2rem;
     .nav-links {
-      display: none;
+      a {
+        font-size: 1.2rem;
+        margin: 0 1rem;
+      }
     }
     i {
       font-size: 2.5rem;
@@ -106,9 +112,9 @@ const StyledNav = styled.nav`
         color: var(--black);
       }
     }
-    .mobile-menu-button {
+    /* .mobile-menu-button {
       display: block;
-    }
+    } */
   }
 `;
 

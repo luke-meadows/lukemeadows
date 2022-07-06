@@ -30,4 +30,9 @@ const List = styled.div`
       transform: scale(1.01);
     }
   }
+  @media only screen and (max-width: 1000px) {
+    a {
+      font-size: 2rem;
+    }
+  }
 `;

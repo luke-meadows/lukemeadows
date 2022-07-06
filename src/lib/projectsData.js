@@ -21,8 +21,7 @@ export const projectsData = {
   abs: {
     title: 'Above and Beyond Solutions',
     text: [
-      'This project was completed for a client in the smart home business. Connected Home Systems wanted to inject some energy back into their website with a completely overhauled design which appealed to their high end clientele.',
-      'Included in the build is a content management system. The administrator is able to create, edit and delete the content on the website. Blog posts, images and past projects can all be managed through the password protected portal.',
+      'Above and Beyond Solutions initially hired me as a design consultant, soon after they asked me to rebuild their entire site. ABS specialise in marketing, events and exhibitions. Since their new site launched they have seen a significant increase in revenue and have branched out all across the UK and internationally.',
     ],
     deliverables: ['Design', 'Development', 'CMS'],
     urls: {

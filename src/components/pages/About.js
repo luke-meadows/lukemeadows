@@ -14,11 +14,17 @@ export default function About() {
       <Hero bg="almond" chevron="black">
         <Heading color="black">about.</Heading>
       </Hero>
-      <Container color="white" bg="black" padding="8rem 0rem 0rem 0rem">
+      <AboutContainer>
         <TopBlurb />
         <Skills />
-      </Container>
+      </AboutContainer>
       <Footer />
     </PageTransitionDiv>
   );
 }
+
+const AboutContainer = styled.div`
+  padding: 8rem 0rem 0rem 0rem;
+  color: var(--white);
+  background-color: var(--black);
+`;

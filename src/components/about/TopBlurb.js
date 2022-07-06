@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import AboutImage from '../../imgs/About.jpg';
 export default function TopBlurb() {
@@ -10,29 +11,29 @@ export default function TopBlurb() {
             <i className="icon-location" />
             <h3>London, UK</h3>
           </Location>
+          <p>Hi there! I'm Luke, a Web Developer based in London.</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut,
-            voluptatum ullam exercitationem dolore nemo eligendi necessitatibus.
+            I am passionate about creating visually pleasing and performant
+            websites. I work both as a freelance developer and as a contractor
+            for tech businesses in need of frontend design and development.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut,
-            voluptatum ullam exercitationem dolore nemo eligendi necessitatibus
-            fugit aliquid incidunt eaque soluta asperiores aperiam mollitia ipsa
-            deleniti laborum est nesciunt numquam!
+            My most recent project was converting website designs into code for
+            Seatlab NFT, an exciting new start up set to revolutionise the way
+            event ticketing is managed with the use of NFTs.{' - '}
+            <Link to="/work">
+              <span style={{ fontWeight: 500, color: 'var(--almond)' }}>
+                view my recent projects.
+              </span>
+            </Link>
           </p>
           <p>
-            If you'd like to discuss a project you have in mind please{' '}
-            <span style={{ fontWeight: 500, color: 'var(--almond)' }}>
-              contact me here.
-            </span>
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, fugit
-            aliquid incidunt eaque soluta asperiores aperiam mollitia ipsa
-            deleniti{' - '}
-            <span style={{ fontWeight: 500, color: 'var(--almond)' }}>
-              view my recent projects.
-            </span>
+            If you'd like to discuss a project you have in mind please{' - '}
+            <Link to="/contact">
+              <span style={{ fontWeight: 500, color: 'var(--almond)' }}>
+                contact me here.
+              </span>
+            </Link>
           </p>
         </MainText>
         <ImageContainer>

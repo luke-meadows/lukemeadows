@@ -22,6 +22,7 @@ const StyledButton = styled(Link)`
   position: fixed;
   right: 2rem;
   top: 0;
+  z-index: 2;
   &:hover {
     color: var(--almond);
   }

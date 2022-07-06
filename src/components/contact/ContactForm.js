@@ -179,4 +179,19 @@ const Form = styled.form`
   .nonono {
     border-bottom: 2px solid var(--almond);
   }
+  @media only screen and (max-width: 1000px) {
+    input,
+    textarea {
+      border-radius: 0;
+      padding: 1rem 0;
+      font-size: 16px;
+    }
+    button {
+      font-size: 16px;
+      font-weight: 300;
+    }
+    input[type='search'] {
+      -webkit-appearance: none;
+    }
+  }
 `;

@@ -29,8 +29,12 @@ export default function ProjectContent({}) {
                   ))}
                 </div>
                 <div className="icon-container">
-                  <i className="icon-code" />
-                  <i className="icon-window" />
+                  <a href={project?.urls.code} target="blank">
+                    <i className="icon-code" />
+                  </a>
+                  <a href={project?.urls.site} target="blank">
+                    <i className="icon-window" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -52,6 +56,9 @@ const Container = styled.section`
   padding: 8rem 0;
   max-width: 1000px;
   margin: 0 auto;
+  @media only screen and (max-width: 1000px) {
+    padding: 8rem 2rem;
+  }
   h3 {
     font-weight: 600;
     font-family: 'Poppins';
@@ -124,6 +131,13 @@ const Preview = styled.section`
     max-width: 1000px;
     width: 1000px;
     border-radius: 10px;
+    overflow: hidden;
   }
   padding-bottom: 3rem;
+  @media only screen and (max-width: 1000px) {
+    .preview {
+      width: 100%;
+      padding: 0 2rem;
+    }
+  }
 `;

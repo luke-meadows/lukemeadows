@@ -19,6 +19,6 @@ const StyledContainer = styled.section`
   position: relative;
   // MEDIA QUERY
   @media only screen and (max-width: 1000px) {
-    padding: 0;
+    padding: 4rem;
   }
 `;

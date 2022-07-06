@@ -1,7 +1,37 @@
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import LeftHand from '../../imgs/footer-imgs/left-hand.png';
 import RightHand from '../../imgs/footer-imgs/right-hand.png';
 export default function Footer() {
+  const emailRef = useRef();
+  const phoneRef = useRef();
+
+  const [textContent, setTextContent] = useState({
+    mail: 'hello@lukemeadows.dev',
+    phone: '07949 442844',
+  });
+
+  const refs = {
+    mail: emailRef,
+    phone: phoneRef,
+  };
+
+  const wait = (amount = 0) =>
+    new Promise((resolve) => setTimeout(resolve, amount));
+
+  async function copyInfo(e) {
+    const infoOption = e.currentTarget.dataset.info;
+    const text = textContent[infoOption];
+    navigator.clipboard.writeText(text);
+    refs[infoOption].current.className = 'copied';
+    refs[infoOption].current.textContent = 'Copied!';
+
+    wait(2000).then(() => {
+      refs[infoOption].current.textContent = text;
+      refs[infoOption].current.className = '';
+    });
+  }
+
   return (
     <StyledFooter>
       <div className="footer-image left">
@@ -9,18 +39,22 @@ export default function Footer() {
       </div>
       <div className="text">
         <h2>Luke Meadows</h2>
-        <a className="footer-info-link">
+        <div className="footer-info-link" data-info="mail" onClick={copyInfo}>
           <i className="icon-mail" />
-          <p>hello@lukemeadows.dev</p>
-        </a>
-        <a className="footer-info-link">
+          <p className="" ref={emailRef}>
+            {textContent.mail}
+          </p>
+        </div>
+        <div className="footer-info-link" data-info="phone" onClick={copyInfo}>
           <i className="icon-phone" />
-          <p>07949 442844</p>
-        </a>
-        <a className="footer-info-link">
+          <p className="" ref={phoneRef}>
+            {textContent.phone}
+          </p>
+        </div>
+        {/* <a className="footer-info-link">
           <i className="icon-doc-text" />
           <p>Resume</p>
-        </a>
+        </a> */}
       </div>
 
       <div className="footer-image right">
@@ -57,7 +91,7 @@ const StyledFooter = styled.footer`
     transition: var(--hover-transition);
     color: var(--white);
     margin: 0.25rem 0;
-    cursor: pointer;
+    cursor: copy;
     i {
       margin-right: 0.5rem;
     }
@@ -66,6 +100,11 @@ const StyledFooter = styled.footer`
       a {
         color: var(--almond);
       }
+    }
+    .copied {
+      color: var(--almond);
+      /* text-align: center; */
+      width: 100%;
     }
   }
 
