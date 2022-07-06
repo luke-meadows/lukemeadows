@@ -14,6 +14,7 @@ export default function Skills() {
           <p>Framer Motion</p>
           <p>Redux</p>
           <p>Storybook</p>
+          <p>Stripe</p>
         </Column>
         <Column>
           <p className="header">Backend</p>
@@ -21,6 +22,7 @@ export default function Skills() {
           <p>Firebase</p>
           <p>MongoDB</p>
           <p>Keystone.js</p>
+          <p>Strapi</p>
         </Column>
         <Column>
           <p className="header">Design</p>
