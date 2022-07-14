@@ -78,8 +78,14 @@ const Container = styled.section`
     }
     .right {
       opacity: 0.6;
-      max-width: 100vw;
-      max-height: 90vh;
+      width: 90vw;
+      bottom: 0;
+      img {
+        width: 90vw;
+        object-fit: contain;
+        object-position: bottom right;
+        bottom: 0;
+      }
     }
   }
 `;
