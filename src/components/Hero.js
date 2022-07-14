@@ -78,6 +78,8 @@ const Container = styled.section`
     }
     .right {
       opacity: 0.6;
+      max-width: 100vw;
+      max-height: 90vh;
     }
   }
 `;

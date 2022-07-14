@@ -23,4 +23,10 @@ const Text = styled(motion.h1)`
   opacity: 0;
   position: relative;
   z-index: 3;
+  @media only screen and (max-width: 900px) {
+    font-size: 7rem;
+  }
+  @media only screen and (max-width: 350px) {
+    font-size: 5rem;
+  }
 `;
